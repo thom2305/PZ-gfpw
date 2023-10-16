@@ -5,7 +5,7 @@ wpg = wpg or {};
 
 --events
 
-Events.OnGameStart.Add(OnGameStart)
+
 
 --main function
 
