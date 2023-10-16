@@ -1,19 +1,8 @@
-WaterPowerGenerator = WaterPowerGenerator or {};
+wpg = wpg or {};
 
 --localfunctions/helpers
 
-function WaterPowerGenerator:gameIsSP()
-    return isClient() == false;
-end
 
-local function setPowerAndWaterStates(powerState, waterState)
-    WaterPowerGenerator:toggle("power", powerState)
-    WaterPowerGenerator:toggle("water", waterState)
-end
-
-local function OnGameStart()
-    setPowerAndWaterStates("on", "on")
-end
 --events
 
 Events.OnGameStart.Add(OnGameStart)
@@ -30,14 +19,6 @@ function WaterPowerGenerator:toggle(which, state)
             and 2147483647
             or -1
         );
-    end
-
-    if WaterPowerGenerator:gameIsSP()
-    then
-        getSandboxOptions():copyValuesFrom(options);
-        getSandboxOptions():toLua();
-    else
-        options:sendToServer();
     end
 end
 
