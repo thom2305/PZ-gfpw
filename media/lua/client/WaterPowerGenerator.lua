@@ -5,8 +5,6 @@ wpg = wpg or {};
 
 --events
 
-
-
 --main function
 
 function WaterPowerGenerator:toggle(which, state)
