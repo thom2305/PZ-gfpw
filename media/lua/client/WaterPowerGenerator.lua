@@ -17,5 +17,5 @@ function wpg:toggle(which, state)
             or -1
         );
     end
-end
+end 
 
