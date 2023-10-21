@@ -1,4 +1,4 @@
-wpg = wpg or {};
+ wpg = wpg or {};
 
 --localfunctions/helpers
 
