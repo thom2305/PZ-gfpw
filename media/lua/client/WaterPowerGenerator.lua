@@ -17,5 +17,16 @@ function wpg:toggle(which, state)
             or -1
         );
     end
+
+    if wpg:gamesp() then
+        getSandboxOptions():copyValuesFrom(options);
+        getSandboxOptions():toLua();
+    else
+        options:sendToServer();
+    end
 end 
 
+--helpers
+function wpg:gameIsSP()
+    return isClient() == false;
+end
