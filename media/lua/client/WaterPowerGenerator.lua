@@ -27,6 +27,6 @@ function wpg:toggle(which, state)
 end 
 
 --helpers
-function wpg:gameIsSP()
+function wpg:gamesp()
     return isClient() == false;
 end
