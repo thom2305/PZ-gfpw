@@ -37,7 +37,6 @@ function wpg:setpw(which, state)
 end 
 
 --helpers
-
 function wpg:gamesp()
     return isClient() == false;
 end
