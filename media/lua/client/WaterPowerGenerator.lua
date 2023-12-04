@@ -12,7 +12,7 @@ function wpg:toggle(which, state)
     if state == "on" or state == "off"
     then
         options:copyValuesFrom(getSandboxOptions());
-        options:getOptionByName(wpg:getOptionName(which)):setValue(state == "on"
+        options:getOptionByName(wpg:getopnm(which)):setValue(state == "on"
             and 2147483647
             or -1
         );
@@ -29,4 +29,11 @@ end
 --helpers
 function wpg:gamesp()
     return isClient() == false;
+end
+
+function wpg:getopnm(which)
+    return (which == "power"
+        and "ElecShut"
+        or "WaterShut"
+    ) .. "Modifier";
 end
