@@ -1,17 +1,19 @@
  wpg = wpg or {};
 
 --localfunctions/helpers
+local function OnKeyPressed(KEY_NUMPAD8)
+    wpg:setpw(ElecShut, off)
+end
+
+local function OnKeyPress(KEY_NUMPAD9)
+    wpg:setpw(ElecShut, on)
+end
 
 --events
-Events.OnObjectLeftMouseButtonUp.Add(function(player, object)
-    if instanceof(object, "IsoDoor") then
-        if object:isOpen() then
-            wpg:setpw(power, off)  
-        else
-            wpg:setpw(power, on)   
-        end
-    end
-end)
+
+Events.OnKeyPressed.Add(OnKeyPressed)
+Events.OnKeyPressed.Add(OnKeyPress)
+
 --main function
 
 function wpg:setpw(which, state)
@@ -35,6 +37,7 @@ function wpg:setpw(which, state)
 end 
 
 --helpers
+
 function wpg:gamesp()
     return isClient() == false;
 end
