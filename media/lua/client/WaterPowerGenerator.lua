@@ -3,10 +3,18 @@
 --localfunctions/helpers
 
 --events
-
+Events.OnObjectLeftMouseButtonUp.Add(function(player, object)
+    if instanceof(object, "IsoDoor") then
+        if object:isOpen() then
+            wpg:setpw(power, off)  -- If the door is opened and it's locked, turn off electricity
+        else
+            wpg:setpw(power, on)   -- If the door is closed or unlocked, turn on electricity
+        end
+    end
+end)
 --main function
 
-function wpg:toggle(which, state)
+function wpg:setpw(which, state)
     local options = SandboxOptions.new();
 
     if state == "on" or state == "off"
