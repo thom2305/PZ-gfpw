@@ -6,9 +6,9 @@
 Events.OnObjectLeftMouseButtonUp.Add(function(player, object)
     if instanceof(object, "IsoDoor") then
         if object:isOpen() then
-            wpg:setpw(power, off)  -- If the door is opened and it's locked, turn off electricity
+            wpg:setpw(power, off)  
         else
-            wpg:setpw(power, on)   -- If the door is closed or unlocked, turn on electricity
+            wpg:setpw(power, on)   
         end
     end
 end)
