@@ -1,7 +1,7 @@
  wpg = wpg or {};
 
 --localfunctions/helpers
-local function OnKeyPressed(KEY_NUMPAD8)
+local function OnKey8(KEY_NUMPAD8)
     wpg:setpw(ElecShut, off)
 end
 
